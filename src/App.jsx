@@ -39,13 +39,15 @@ const App = () => {
       <hr />
       
 
+      {cats.length === 0 ? 'No cats to display' : 
+              cats.map((cat) => (
+                <>
+                  <h3>{cat.name}</h3>
+                  <button onClick={() => handleRemoveCat(cat.name)}>Delete {cat.name}</button>
+                </>
+              ))        
+      }
 
-      {cats.map((cat) => (
-        <>
-          <h3>{cat.name}</h3>
-          <button onClick={() => handleRemoveCat(cat.name)}>Delete {cat.name}</button>
-        </>
-      ))}
 
 
     </div>
