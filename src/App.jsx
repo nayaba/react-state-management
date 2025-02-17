@@ -37,7 +37,17 @@ const App = () => {
       <button onClick={() => handleAddCat({name: 'Kira'})}>Add Kira</button>
       <button onClick={() => handleAddCat({name: 'Lion'})}>Add Lion</button>
       <hr />
-      <button onClick={() => handleRemoveCat('Kira')}>Delete Kira</button>
+      
+
+
+      {cats.map((cat) => (
+        <>
+          <h3>{cat.name}</h3>
+          <button onClick={() => handleRemoveCat(cat.name)}>Delete {cat.name}</button>
+        </>
+      ))}
+
+
     </div>
   )
 }
